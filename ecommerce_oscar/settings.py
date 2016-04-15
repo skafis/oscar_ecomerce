@@ -38,7 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'compressor',
+    'widget_tweaks',
+] + get_core_apps()
+
+SITE_ID = 1
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,6 +59,7 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'ecommerce_oscar.urls'
 
+from oscar import OSCAR_MAIN_TEMPLATE_DIR
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
