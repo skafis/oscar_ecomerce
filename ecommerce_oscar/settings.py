@@ -122,6 +122,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr',
+        'INCLUDE_SPELLING': True,
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
@@ -141,3 +148,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+  
